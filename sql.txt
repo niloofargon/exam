@@ -1,0 +1,18 @@
+
+CREATE TABLE stationinfo(id INT, name varchar(50), location  varchar(50), city  varchar(50))
+CREATE TABLE larze(id int, iddastgah int, larze1 int, time1 time, larze2 int, time2 time, larze3 int, time3 time)
+INSERT INTO larze
+VALUES(1,1,6.2, '23:59:00',0,0,0,0)
+INSERT INTO larze
+VALUES(1,2,4.3, '7:31:15',6,'8:08:08',0,0)
+INSERT INTO larze
+VALUES(2,2,4.3, '16:52:48',3,'17:24:08',0,0)
+insert into stationinfo
+values(1, 'damavand', 'qods', 'tehran')
+insert into stationinfo
+values(2, 'karaj', 'mehrshahr', 'alborz')
+SELECT iddastgah,larze1,time1,larze2,time2,larze3,time3 FROM larze
+FULL OUTER JOIN stationinfo
+on larze.id=stationinfo.id
+ORDER by stationinfo.id
+;
